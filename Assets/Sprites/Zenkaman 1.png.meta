@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cc693cbeb713d0c4c92d228afac615e0
+guid: cf1cbb947a1fb5e4a849814a83fe8beb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zenkaman_0
+      name: Zenkaman 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +131,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d918ccdcd795e3e46af600b0e94cbd21
-      internalID: 1521169140
+      spriteID: 4cf0a04ccc3d3cc498704b6b7059dd27
+      internalID: 25699482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_1
+      name: Zenkaman 1_1
       rect:
         serializedVersion: 2
         x: 32
@@ -152,20 +152,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51c21a57a62040544be1a31fad4eef2c
-      internalID: 1070877781
+      spriteID: 82463e0f70d08234fa51065cc8cf05bb
+      internalID: 535272560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_2
+      name: Zenkaman 1_2
       rect:
         serializedVersion: 2
         x: 64
@@ -173,20 +173,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f95bbfcdb9bcb5144803fe6e9b65fd18
-      internalID: 1830064965
+      spriteID: bd596a7ca1447044d9300ec688915a0d
+      internalID: 254298020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_3
+      name: Zenkaman 1_3
       rect:
         serializedVersion: 2
         x: 96
@@ -194,20 +194,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a509871ef387fa143b7d24dae8ade0a1
-      internalID: 1029467452
+      spriteID: 36a9714de79c1254da923710930cf4e9
+      internalID: -1417665583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_4
+      name: Zenkaman 1_4
       rect:
         serializedVersion: 2
         x: 128
@@ -215,20 +215,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d9499d6d2d2914479c0810db1cb2595
-      internalID: -851341241
+      spriteID: 4251a401ecbce344cbc48edd530801a3
+      internalID: -1881925597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_5
+      name: Zenkaman 1_5
       rect:
         serializedVersion: 2
         x: 0
@@ -236,20 +236,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 520aba497e922864dab46bd51836ca8a
-      internalID: 1629117958
+      spriteID: b95d112154766fe46bca49ac490e00be
+      internalID: 2083664640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_6
+      name: Zenkaman 1_6
       rect:
         serializedVersion: 2
         x: 32
@@ -257,20 +257,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c35044a98fe3aa44be17cb6ffedbdfd
-      internalID: -830317883
+      spriteID: 1eab62ad2943f3a4cba71a589e4fb373
+      internalID: 48226922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_7
+      name: Zenkaman 1_7
       rect:
         serializedVersion: 2
         x: 64
@@ -278,20 +278,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a7716a489a4b5d4797c7764151f571e
-      internalID: 728243841
+      spriteID: bc21be34a9d5b434396f74be2582b98d
+      internalID: -390888440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_8
+      name: Zenkaman 1_8
       rect:
         serializedVersion: 2
         x: 96
@@ -299,20 +299,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa0261663fb32b64a966f4e4a9d5e3b8
-      internalID: -966782911
+      spriteID: 1f4ff7a0cd5cbfc4ba2d71137f928b2c
+      internalID: -1495405831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_9
+      name: Zenkaman 1_9
       rect:
         serializedVersion: 2
         x: 128
@@ -320,20 +320,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e039cead9655ecd468de7d152af291d7
-      internalID: -1127402125
+      spriteID: 7d1d362fbf6aab8488cb34c446d8a7ae
+      internalID: 2022712476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_10
+      name: Zenkaman 1_10
       rect:
         serializedVersion: 2
         x: 0
@@ -341,20 +341,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24d25ea6f734c9b41b053fd001ab6083
-      internalID: 1744034176
+      spriteID: 2e4c00f9bb152ab40a598df4f492e019
+      internalID: -867327034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_11
+      name: Zenkaman 1_11
       rect:
         serializedVersion: 2
         x: 32
@@ -362,20 +362,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83f8c87ca7d2b5f48966ee0a26db836f
-      internalID: -462709416
+      spriteID: 1a50898fcc9e8fe47928fff367d36635
+      internalID: -1495876668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_12
+      name: Zenkaman 1_12
       rect:
         serializedVersion: 2
         x: 64
@@ -383,20 +383,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3824d9a37a7891748a2047a4a22343e6
-      internalID: -522163678
+      spriteID: 0ec8c7ddc5753ec41819e74512cb8787
+      internalID: 1149037192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_13
+      name: Zenkaman 1_13
       rect:
         serializedVersion: 2
         x: 96
@@ -404,20 +404,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84ba0406f769455418cf072282752967
-      internalID: 434292938
+      spriteID: 77f505637b6184548ac162019d661213
+      internalID: 1704437389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_14
+      name: Zenkaman 1_14
       rect:
         serializedVersion: 2
         x: 128
@@ -425,20 +425,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 586c50415e2d76741a45f81fa4182c1c
-      internalID: 1697929915
+      spriteID: 6becb61f9db11ca4499e71c027da98f0
+      internalID: 1591268881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_15
+      name: Zenkaman 1_15
       rect:
         serializedVersion: 2
         x: 0
@@ -446,20 +446,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6048622efa879d449b9ff22f4fe02a4a
-      internalID: 1836341424
+      spriteID: 12f12b301cb3c86478e2921d80997c22
+      internalID: 1030594487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_16
+      name: Zenkaman 1_16
       rect:
         serializedVersion: 2
         x: 32
@@ -467,20 +467,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45e1936b44d713d429d47174df1ef1fe
-      internalID: 796200855
+      spriteID: 4629b2b2cbe81eb46b94c0e4aed1606e
+      internalID: -207654964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_17
+      name: Zenkaman 1_17
       rect:
         serializedVersion: 2
         x: 64
@@ -488,20 +488,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2044ec4f67aa2dc40bd08725cd2f924f
-      internalID: -1754548352
+      spriteID: fdd5b5c1e975aee4fb92742321850ec5
+      internalID: 840511692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_18
+      name: Zenkaman 1_18
       rect:
         serializedVersion: 2
         x: 96
@@ -509,20 +509,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 361b4206b6e729942895586b4363025d
-      internalID: -567506606
+      spriteID: 99845bb438c4c6248bc0c61de526c76d
+      internalID: 1300913248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_19
+      name: Zenkaman 1_19
       rect:
         serializedVersion: 2
         x: 128
@@ -530,20 +530,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbd402a3c8b116d4e9e3523a6581d2b6
-      internalID: -319312669
+      spriteID: cdd0e228234f2ae4d865b701ed4dd235
+      internalID: 1357114321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_20
+      name: Zenkaman 1_20
       rect:
         serializedVersion: 2
         x: 0
@@ -551,20 +551,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f205d3b0bb249e74a89b60d9d10ffb26
-      internalID: 660278871
+      spriteID: c9c00c1c1a572814f8c711c0bf199374
+      internalID: 1657743957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_21
+      name: Zenkaman 1_21
       rect:
         serializedVersion: 2
         x: 32
@@ -572,20 +572,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a53700135346711488293606ee31d936
-      internalID: 562831289
+      spriteID: 7e2108db614be4044a01313a7b6d5ac0
+      internalID: -60651330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_22
+      name: Zenkaman 1_22
       rect:
         serializedVersion: 2
         x: 64
@@ -593,20 +593,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfebbf1503f6e7b44a066f286c39eb8b
-      internalID: 1622301070
+      spriteID: ed963602a098d66479df49dc1095d4b6
+      internalID: 1657028942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_23
+      name: Zenkaman 1_23
       rect:
         serializedVersion: 2
         x: 96
@@ -614,20 +614,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ce55f50abc1c87438b98cfbaf46daa4
-      internalID: -123884270
+      spriteID: c9b06007a8326f44a87ed2271cb58774
+      internalID: -565099627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_24
+      name: Zenkaman 1_24
       rect:
         serializedVersion: 2
         x: 128
@@ -635,20 +635,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fbbef9da2b8fd74982046ddba4c590f
-      internalID: -719814274
+      spriteID: e4049d6d3aaa02b469586d036a7b2342
+      internalID: 987791805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_25
+      name: Zenkaman 1_25
       rect:
         serializedVersion: 2
         x: 0
@@ -656,20 +656,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1324380b191fb5549893a5dd3968a764
-      internalID: -1203526814
+      spriteID: 946ed146e1dcf174590d3922d4c4e1f7
+      internalID: -160159297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_26
+      name: Zenkaman 1_26
       rect:
         serializedVersion: 2
         x: 32
@@ -677,20 +677,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b46f5ae5392f3ea4e941aca485702f42
-      internalID: -771234222
+      spriteID: 42c824ee0f0fb664fae37ca63c54df4a
+      internalID: -1271121028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_27
+      name: Zenkaman 1_27
       rect:
         serializedVersion: 2
         x: 64
@@ -698,20 +698,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 604664da278fcd54fb0a88fba2699d48
-      internalID: 1096601021
+      spriteID: 1be7c652da8cfce498a2a59df0e60dea
+      internalID: -751292214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_28
+      name: Zenkaman 1_28
       rect:
         serializedVersion: 2
         x: 96
@@ -719,20 +719,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1afb6ff17b4cb504492f4c2c50c7f7bd
-      internalID: -512741109
+      spriteID: e4d34ec37cb6df741ab80f35af798182
+      internalID: -1816290474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_29
+      name: Zenkaman 1_29
       rect:
         serializedVersion: 2
         x: 128
@@ -740,20 +740,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f01722b2ee6f304eac1df43ec01451b
-      internalID: 750086944
+      spriteID: 5a7c4d7513a57f44f9470edfa6fc29b8
+      internalID: 181852713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_30
+      name: Zenkaman 1_30
       rect:
         serializedVersion: 2
         x: 0
@@ -761,20 +761,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a453ba8abf83d0499a60482ad5320af
-      internalID: 826983188
+      spriteID: 79ef14344bf094a4bae6cfc085940166
+      internalID: 478091392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_31
+      name: Zenkaman 1_31
       rect:
         serializedVersion: 2
         x: 32
@@ -782,20 +782,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81e029414142c624f9873d0ee5c46b28
-      internalID: -1092045927
+      spriteID: 47e231414d53a684695de888620754cf
+      internalID: -1591084152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_32
+      name: Zenkaman 1_32
       rect:
         serializedVersion: 2
         x: 64
@@ -803,20 +803,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fad957e1998abd4fbc3cdfa5fbd121b
-      internalID: 1390357657
+      spriteID: bae2a8088c5ea9e40ba217b3ff6b1e8a
+      internalID: -1009150096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_33
+      name: Zenkaman 1_33
       rect:
         serializedVersion: 2
         x: 96
@@ -824,20 +824,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93d6dec589b9a7e47a31a8dc2700f552
-      internalID: 1147346580
+      spriteID: 37474908e191571478fc86cf51dca7c2
+      internalID: -1592549857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_34
+      name: Zenkaman 1_34
       rect:
         serializedVersion: 2
         x: 128
@@ -845,20 +845,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c7eb8e3c335e5e41b5b227efafa70d0
-      internalID: -1596612057
+      spriteID: 42e564f2afe27e6448f96d9212a7101e
+      internalID: -1403893621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_35
+      name: Zenkaman 1_35
       rect:
         serializedVersion: 2
         x: 0
@@ -866,20 +866,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95a327ab2437b6548b3dffed390570bb
-      internalID: 540976724
+      spriteID: 17da607c1132d4f49be15162394a97c3
+      internalID: 830571474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_36
+      name: Zenkaman 1_36
       rect:
         serializedVersion: 2
         x: 32
@@ -887,20 +887,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4af289554890134d994c6f17ebe25a9
-      internalID: -1704343521
+      spriteID: 603df92f30a7ce2409f8974debc6b76d
+      internalID: -1398252389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_37
+      name: Zenkaman 1_37
       rect:
         serializedVersion: 2
         x: 64
@@ -908,20 +908,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d959241cfa83504bbd60d36d1e8b65a
-      internalID: -1626876605
+      spriteID: 1540504f3e37a4949b41eabe56fd045b
+      internalID: -1783819850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_38
+      name: Zenkaman 1_38
       rect:
         serializedVersion: 2
         x: 96
@@ -929,20 +929,20 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e17a83aca7fa7f4d946dbf009b10037
-      internalID: -857479628
+      spriteID: e4d5473ce9b8e0243ae2abd03f84787a
+      internalID: -261894756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenkaman_39
+      name: Zenkaman 1_39
       rect:
         serializedVersion: 2
         x: 128
@@ -950,14 +950,14 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd585df41cb0e464d950f86b4015df01
-      internalID: 1957751579
+      spriteID: 12ab5511b0574bc419c603f939ca9945
+      internalID: -2118082976
       vertices: []
       indices: 
       edges: []
@@ -973,46 +973,46 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Zenkaman_0: 1521169140
-      Zenkaman_1: 1070877781
-      Zenkaman_10: 1744034176
-      Zenkaman_11: -462709416
-      Zenkaman_12: -522163678
-      Zenkaman_13: 434292938
-      Zenkaman_14: 1697929915
-      Zenkaman_15: 1836341424
-      Zenkaman_16: 796200855
-      Zenkaman_17: -1754548352
-      Zenkaman_18: -567506606
-      Zenkaman_19: -319312669
-      Zenkaman_2: 1830064965
-      Zenkaman_20: 660278871
-      Zenkaman_21: 562831289
-      Zenkaman_22: 1622301070
-      Zenkaman_23: -123884270
-      Zenkaman_24: -719814274
-      Zenkaman_25: -1203526814
-      Zenkaman_26: -771234222
-      Zenkaman_27: 1096601021
-      Zenkaman_28: -512741109
-      Zenkaman_29: 750086944
-      Zenkaman_3: 1029467452
-      Zenkaman_30: 826983188
-      Zenkaman_31: -1092045927
-      Zenkaman_32: 1390357657
-      Zenkaman_33: 1147346580
-      Zenkaman_34: -1596612057
-      Zenkaman_35: 540976724
-      Zenkaman_36: -1704343521
-      Zenkaman_37: -1626876605
-      Zenkaman_38: -857479628
-      Zenkaman_39: 1957751579
-      Zenkaman_4: -851341241
-      Zenkaman_5: 1629117958
-      Zenkaman_6: -830317883
-      Zenkaman_7: 728243841
-      Zenkaman_8: -966782911
-      Zenkaman_9: -1127402125
+      Zenkaman 1_0: 25699482
+      Zenkaman 1_1: 535272560
+      Zenkaman 1_10: -867327034
+      Zenkaman 1_11: -1495876668
+      Zenkaman 1_12: 1149037192
+      Zenkaman 1_13: 1704437389
+      Zenkaman 1_14: 1591268881
+      Zenkaman 1_15: 1030594487
+      Zenkaman 1_16: -207654964
+      Zenkaman 1_17: 840511692
+      Zenkaman 1_18: 1300913248
+      Zenkaman 1_19: 1357114321
+      Zenkaman 1_2: 254298020
+      Zenkaman 1_20: 1657743957
+      Zenkaman 1_21: -60651330
+      Zenkaman 1_22: 1657028942
+      Zenkaman 1_23: -565099627
+      Zenkaman 1_24: 987791805
+      Zenkaman 1_25: -160159297
+      Zenkaman 1_26: -1271121028
+      Zenkaman 1_27: -751292214
+      Zenkaman 1_28: -1816290474
+      Zenkaman 1_29: 181852713
+      Zenkaman 1_3: -1417665583
+      Zenkaman 1_30: 478091392
+      Zenkaman 1_31: -1591084152
+      Zenkaman 1_32: -1009150096
+      Zenkaman 1_33: -1592549857
+      Zenkaman 1_34: -1403893621
+      Zenkaman 1_35: 830571474
+      Zenkaman 1_36: -1398252389
+      Zenkaman 1_37: -1783819850
+      Zenkaman 1_38: -261894756
+      Zenkaman 1_39: -2118082976
+      Zenkaman 1_4: -1881925597
+      Zenkaman 1_5: 2083664640
+      Zenkaman 1_6: 48226922
+      Zenkaman 1_7: -390888440
+      Zenkaman 1_8: -1495405831
+      Zenkaman 1_9: 2022712476
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
