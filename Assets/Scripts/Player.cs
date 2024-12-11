@@ -10,6 +10,7 @@ namespace Mirror.Examples.Chat
 
         private Rigidbody2D rb;
         private Animator animator;
+        private NetworkAnimator nAnimator;
         private float horizontalInput = 0;
         private float verticalInput = 0;
 
@@ -20,6 +21,7 @@ namespace Mirror.Examples.Chat
 
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
+            nAnimator = GetComponent<NetworkAnimator>();
         }
 
         public override void OnStartServer()
@@ -83,8 +85,19 @@ namespace Mirror.Examples.Chat
             
 
             rb.velocity = velocity;
-            animator.SetFloat("horizontal-input", rb.velocity.x > 0 ? 1 : (rb.velocity.x < 0 ? -1 : 0));
-            animator.SetFloat("vertical-input", rb.velocity.y > 0 ? 1 : (rb.velocity.y < 0 ? -1 : 0));
+
+            //animator.SetFloat("horizontal-input", rb.velocity.x > 0 ? 1 : (rb.velocity.x < 0 ? -1 : 0));
+            //animator.SetFloat("vertical-input", rb.velocity.y > 0 ? 1 : (rb.velocity.y < 0 ? -1 : 0));
+
+            if (rb.velocity.x > 0) nAnimator.SetTrigger("right");
+            //if (rb.velocity.x == 0) animator.SetTrigger("idle");
+            else if (rb.velocity.x < 0) nAnimator.SetTrigger("left");
+
+            else if (rb.velocity.y > 0) nAnimator.SetTrigger("up");
+            //if (rb.velocity.y == 0) animator.SetTrigger("idle");
+            else if (rb.velocity.y < 0) nAnimator.SetTrigger("down");
+
+            else if (rb.velocity.x == 0 && rb.velocity.y == 0) nAnimator.SetTrigger("idle");
         }
 
         /*
