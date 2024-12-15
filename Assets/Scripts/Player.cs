@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Mirror.Examples.Chat
@@ -7,20 +5,25 @@ namespace Mirror.Examples.Chat
     public class Player : NetworkBehaviour
     {
         [SyncVar] public string playerName;
+        [SerializeField] private GameObject bomb_go;
 
         private Rigidbody2D rb;
-        private Animator animator;
         private NetworkAnimator nAnimator;
-        private float horizontalInput = 0;
-        private float verticalInput = 0;
+        private Vector2 previousVelocity;
+        private float horizontal_input = 0;
+        private float vertical_input = 0;
+        private string lastTriggerSent = "idle";
 
         [SerializeField] private float speed = 1f;
+        [SerializeField] private float timeScale = 1f;
 
         void Start(){
+            Time.timeScale = timeScale;
+
             transform.position = new Vector2(1f, 1f);
+            previousVelocity = Vector2.zero;
 
             rb = GetComponent<Rigidbody2D>();
-            animator = GetComponent<Animator>();
             nAnimator = GetComponent<NetworkAnimator>();
         }
 
@@ -34,25 +37,48 @@ namespace Mirror.Examples.Chat
             ChatUI.localPlayerName = playerName;
         }
 
+        private void Update()
+        {
+            if (!isLocalPlayer) return;
+
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("Sent SPAWN BOMB");
+                SpawnBomb(transform.position);
+            }
+        }
+
         // me tardé un pinche día haciendo esto
         void FixedUpdate(){
             if(!isLocalPlayer) return;
 
-            horizontalInput = Input.GetAxisRaw("Horizontal");
-            verticalInput = Input.GetAxisRaw("Vertical");
+            horizontal_input = Input.GetAxisRaw("Horizontal");
+            vertical_input = Input.GetAxisRaw("Vertical");
 
-            RaycastHit2D horizontalRay = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 0f), Vector2.right * horizontalInput, 0.501f * Mathf.Abs(horizontalInput));
-            RaycastHit2D verticalRay = Physics2D.Raycast(new Vector2(transform.position.x + 0f, transform.position.y), Vector2.up * verticalInput, 0.501f * Mathf.Abs(verticalInput));
-            RaycastHit2D diagonalRay = Physics2D.Raycast(transform.position, new(horizontalInput, verticalInput), Mathf.Sqrt(Mathf.Pow(Mathf.Abs(horizontalInput * 0.51f), 2) + Mathf.Pow(Mathf.Abs(verticalInput * 0.51f), 2)));
+            Vector2 new_velocity = Get_Velocity();
+            rb.velocity = new_velocity;
 
-            Vector2 velocity = new(horizontalInput * speed, verticalInput * speed);
-            if (verticalRay) velocity.y = 0;
-            if (horizontalRay) velocity.x = 0;
+            Fix_Position(new_velocity);
+            Set_Animation_Triggers(new_velocity);
 
-            if (diagonalRay)
+            previousVelocity = new_velocity;
+
+        }
+
+        private Vector2 Get_Velocity()
+        {
+            RaycastHit2D horizontal_ray = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 0f), Vector2.right * horizontal_input, 0.501f * Mathf.Abs(horizontal_input));
+            RaycastHit2D vertical_ray = Physics2D.Raycast(new Vector2(transform.position.x + 0f, transform.position.y), Vector2.up * vertical_input, 0.501f * Mathf.Abs(vertical_input));
+            RaycastHit2D diagonal_ray = Physics2D.Raycast(transform.position, new(horizontal_input, vertical_input), Mathf.Sqrt(Mathf.Pow(Mathf.Abs(horizontal_input * 0.51f), 2) + Mathf.Pow(Mathf.Abs(vertical_input * 0.51f), 2)));
+
+            Vector2 new_velocity = new(horizontal_input * speed, vertical_input * speed);
+            if (vertical_ray.collider != null) new_velocity.y = 0;
+            if (horizontal_ray.collider != null) new_velocity.x = 0;
+
+            if (diagonal_ray.collider != null)
             {
-                Bounds bounds = diagonalRay.collider.bounds;
-                Vector2 hitPoint = diagonalRay.point;
+                Bounds bounds = diagonal_ray.collider.bounds;
+                Vector2 hitPoint = diagonal_ray.point;
 
                 float distanceToTop = Mathf.Abs(bounds.max.y - hitPoint.y);
                 float distanceToBottom = Mathf.Abs(bounds.min.y - hitPoint.y);
@@ -61,20 +87,24 @@ namespace Mirror.Examples.Chat
 
                 float minDistance = Mathf.Min(distanceToTop, distanceToBottom, distanceToRight, distanceToLeft);
 
-                if (minDistance == distanceToTop || minDistance == distanceToBottom) velocity.y = 0;
-                else if (minDistance == distanceToLeft || minDistance == distanceToRight) velocity.x = 0;
+                if (minDistance == distanceToTop || minDistance == distanceToBottom) new_velocity.y = 0;
+                else if (minDistance == distanceToLeft || minDistance == distanceToRight) new_velocity.x = 0;
             }
 
-            
+            return new_velocity;
+        }
+
+        private void Fix_Position(Vector2 velocity)
+        {
             Vector2 fixedPos = Vector2.zero;
-            if(velocity.x == 0 && velocity.y != 0)
+            if (velocity.x == 0 && velocity.y != 0)
             {
                 int targetPos = Mathf.RoundToInt(transform.position.x);
                 float dif = targetPos - transform.position.x;
                 if (dif < 0) fixedPos.x += Mathf.Max(-0.05f, dif);
                 else fixedPos.x += Mathf.Min(0.05f, dif);
             }
-            if(velocity.y == 0 && velocity.x != 0)
+            if (velocity.y == 0 && velocity.x != 0)
             {
                 int targetPos = Mathf.RoundToInt(transform.position.y);
                 float dif = targetPos - transform.position.y;
@@ -82,31 +112,64 @@ namespace Mirror.Examples.Chat
                 else fixedPos.y += Mathf.Min(0.05f, dif);
             }
             transform.position = new Vector3(transform.position.x + fixedPos.x, transform.position.y + fixedPos.y);
-            
-
-            rb.velocity = velocity;
-
-            //animator.SetFloat("horizontal-input", rb.velocity.x > 0 ? 1 : (rb.velocity.x < 0 ? -1 : 0));
-            //animator.SetFloat("vertical-input", rb.velocity.y > 0 ? 1 : (rb.velocity.y < 0 ? -1 : 0));
-
-            if (rb.velocity.x > 0) nAnimator.SetTrigger("right");
-            //if (rb.velocity.x == 0) animator.SetTrigger("idle");
-            else if (rb.velocity.x < 0) nAnimator.SetTrigger("left");
-
-            else if (rb.velocity.y > 0) nAnimator.SetTrigger("up");
-            //if (rb.velocity.y == 0) animator.SetTrigger("idle");
-            else if (rb.velocity.y < 0) nAnimator.SetTrigger("down");
-
-            else if (rb.velocity.x == 0 && rb.velocity.y == 0) nAnimator.SetTrigger("idle");
         }
 
-        /*
+        private void Set_Animation_Triggers(Vector2 velocity)
+        {
+            if (velocity != previousVelocity || (horizontal_input == 0 && vertical_input == 0))
+            {
+                if (velocity.x > 0 && lastTriggerSent != "right")
+                {
+                    nAnimator.SetTrigger("right");
+                    lastTriggerSent = "right";
+                    //Debug.Log("Sent RIGHT");
+                }
+                else if (velocity.x < 0 && lastTriggerSent != "left")
+                {
+                    nAnimator.SetTrigger("left");
+                    lastTriggerSent = "left";
+                    //Debug.Log("Sent LEFT");
+                }
+                else if (velocity.y > 0 && lastTriggerSent != "up")
+                {
+                    nAnimator.SetTrigger("up");
+                    lastTriggerSent = "up";
+                    //Debug.Log("Sent UP");
+                }
+                else if (velocity.y < 0 && lastTriggerSent != "down")
+                {
+                    nAnimator.SetTrigger("down");
+                    lastTriggerSent = "down";
+                    //Debug.Log("Sent DOWN");
+                }
+                else if (velocity.x == 0 && velocity.y == 0 && lastTriggerSent != "idle")
+                {
+                    nAnimator.SetTrigger("idle");
+                    lastTriggerSent = "idle";
+                    //Debug.Log("Sent IDLE");
+                }
+            }
+        }
+        
         private void OnDrawGizmos()
         {
-            Gizmos.DrawLine(new Vector3(transform.position.x, transform.position.y + 0f), new Vector3(transform.position.x + (0.55f * horizontalInput), transform.position.y + 0f));
-            Gizmos.DrawLine(new Vector3(transform.position.x + 0f, transform.position.y), new Vector3(transform.position.x + 0f, transform.position.y + (0.55f * verticalInput)));
-            Gizmos.DrawLine(transform.position, new(transform.position.x + horizontalInput * 0.5f, transform.position.y + verticalInput * 0.5f));
+            Gizmos.DrawLine(new Vector3(transform.position.x, transform.position.y + 0f), new Vector3(transform.position.x + (0.55f * horizontal_input), transform.position.y + 0f));
+            Gizmos.DrawLine(new Vector3(transform.position.x + 0f, transform.position.y), new Vector3(transform.position.x + 0f, transform.position.y + (0.55f * vertical_input)));
+            Gizmos.DrawLine(transform.position, new(transform.position.x + horizontal_input * 0.5f, transform.position.y + vertical_input * 0.5f));
         }
-        */
+
+        [Command(requiresAuthority = false)]
+        public void SpawnBomb(Vector2 player_position)
+        {
+            Vector2 spawn_position = new(Mathf.RoundToInt(player_position.x), Mathf.RoundToInt(player_position.y));
+            GameObject bomb_clone = Instantiate(bomb_go, spawn_position, Quaternion.identity);
+            NetworkServer.Spawn(bomb_clone);
+        }
+
+        [ClientRpc]
+        public void RPC_Die()
+        {
+            if(isLocalPlayer) Debug.Log("You Died!");
+        }
     }
 }
