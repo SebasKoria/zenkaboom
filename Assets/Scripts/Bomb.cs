@@ -42,10 +42,15 @@ namespace Mirror.Examples.Chat
             foreach(RaycastHit2D hit in hits){
                 Debug.Log(hit.collider.name);
 
-                if (hit.collider.CompareTag("Wall"))
+                if (hit.collider.CompareTag("Wall") || hit.collider.CompareTag("Block"))
                 {
                     explosionsCount = hit.transform.position.x == transform.position.x ? (int)Mathf.Abs(transform.position.y - hit.transform.position.y) : (int)Mathf.Abs(transform.position.x - hit.transform.position.x);
                     explosionsCount -= 1;
+
+                    if(hit.collider.CompareTag("Block") && hit.collider.TryGetComponent<Block>(out Block block))
+                    {
+                        block.DestroyBlock();
+                    }
                     break;
                 }
                 if (hit.collider.CompareTag("Player") && hit.collider.TryGetComponent(out Player player))

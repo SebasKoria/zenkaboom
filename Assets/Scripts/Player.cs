@@ -5,7 +5,11 @@ namespace Mirror.Examples.Chat
     public class Player : NetworkBehaviour
     {
         [SyncVar] public string playerName;
+
         [SerializeField] private GameObject bomb_go;
+        [SerializeField] private LayerMask walls_layer;
+        [SerializeField] private float speed = 1f;
+        [SerializeField] private float timeScale = 1f;
 
         private Rigidbody2D rb;
         private NetworkAnimator nAnimator;
@@ -13,9 +17,6 @@ namespace Mirror.Examples.Chat
         private float horizontal_input = 0;
         private float vertical_input = 0;
         private string lastTriggerSent = "idle";
-
-        [SerializeField] private float speed = 1f;
-        [SerializeField] private float timeScale = 1f;
 
         void Start(){
             Time.timeScale = timeScale;
@@ -67,9 +68,26 @@ namespace Mirror.Examples.Chat
 
         private Vector2 Get_Velocity()
         {
-            RaycastHit2D horizontal_ray = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 0f), Vector2.right * horizontal_input, 0.501f * Mathf.Abs(horizontal_input));
-            RaycastHit2D vertical_ray = Physics2D.Raycast(new Vector2(transform.position.x + 0f, transform.position.y), Vector2.up * vertical_input, 0.501f * Mathf.Abs(vertical_input));
-            RaycastHit2D diagonal_ray = Physics2D.Raycast(transform.position, new(horizontal_input, vertical_input), Mathf.Sqrt(Mathf.Pow(Mathf.Abs(horizontal_input * 0.51f), 2) + Mathf.Pow(Mathf.Abs(vertical_input * 0.51f), 2)));
+            RaycastHit2D horizontal_ray = Physics2D.Raycast
+                (
+                new Vector2(transform.position.x, transform.position.y + 0f),
+                Vector2.right * horizontal_input, 0.501f * Mathf.Abs(horizontal_input),
+                walls_layer
+                );
+            
+            RaycastHit2D vertical_ray = Physics2D.Raycast
+                (
+                new Vector2(transform.position.x + 0f, transform.position.y),
+                Vector2.up * vertical_input, 0.501f * Mathf.Abs(vertical_input),
+                walls_layer
+                );
+
+            RaycastHit2D diagonal_ray = Physics2D.Raycast
+                (
+                transform.position, new(horizontal_input, vertical_input),
+                Mathf.Sqrt(Mathf.Pow(Mathf.Abs(horizontal_input * 0.51f), 2) + Mathf.Pow(Mathf.Abs(vertical_input * 0.51f), 2)),
+                walls_layer
+                );
 
             Vector2 new_velocity = new(horizontal_input * speed, vertical_input * speed);
             if (vertical_ray.collider != null) new_velocity.y = 0;

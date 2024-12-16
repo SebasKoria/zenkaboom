@@ -73,6 +73,9 @@ MonoBehaviour:
   syncInterval: 0.1
   playerName: 
   bomb_go: {fileID: 3914997888241704748, guid: 83fe8e430e56bc54fa40c7f6bfc8e445, type: 3}
+  walls_layer:
+    serializedVersion: 2
+    m_Bits: 64
   speed: 3
   timeScale: 1
 --- !u!114 &2169507005186339156
