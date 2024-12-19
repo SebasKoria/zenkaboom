@@ -33,9 +33,45 @@ namespace Mirror.Examples.Chat
             playerName = (string)connectionToClient.authenticationData;
         }
 
-        public override void OnStartLocalPlayer()
+        public override void OnStartClient()
         {
-            ChatUI.localPlayerName = playerName;
+            if (isLocalPlayer)
+            {
+                base.OnStartClient();
+                GameManager.instance.AddPlayer(this);
+            }
+        }
+
+        [ClientRpc]
+        public void Disconnect()
+        {
+            if (isLocalPlayer)
+            {
+                NetworkManager.singleton.StopHost();
+            }
+        }
+
+        [ClientRpc]
+        public void BecomeAdmin()
+        {
+            if (isLocalPlayer)
+            {
+                Debug.Log("You are an admin");
+            }
+        }
+
+        [ClientRpc]
+        public void LeaveAdminRole()
+        {
+            if (isLocalPlayer)
+            {
+                Debug.Log("You are no longer an admin");
+            }
+        }
+
+        private void NotifyDisconnectionToServer()
+        {
+            GameManager.instance.RemovePlayer(this);
         }
 
         private void Update()
@@ -44,8 +80,13 @@ namespace Mirror.Examples.Chat
 
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Sent SPAWN BOMB");
+                //Debug.Log("Sent SPAWN BOMB");
                 SpawnBomb(transform.position);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                NotifyDisconnectionToServer();
             }
         }
 

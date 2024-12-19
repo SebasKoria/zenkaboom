@@ -1434,7 +1434,7 @@ namespace Mirror
 
         internal static void OnSpawn(SpawnMessage message)
         {
-            Debug.Log($"Client spawn handler instantiating netId={message.netId} assetID={message.assetId} sceneId={message.sceneId:X} pos={message.position}");
+            //Debug.Log($"Client spawn handler instantiating netId={message.netId} assetID={message.assetId} sceneId={message.sceneId:X} pos={message.position}");
             if (FindOrSpawnObject(message, out NetworkIdentity identity))
             {
                 ApplySpawnPayload(identity, message);

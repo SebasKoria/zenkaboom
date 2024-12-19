@@ -17,7 +17,7 @@ namespace Mirror.Examples.Chat
 
         private void Start()
         {
-            if(isServer) Invoke(nameof(DestroyBomb), 3f);
+            if(isServer) Invoke(nameof(DestroyBomb), 2.5f);
         }
 
         public void DestroyBomb()
@@ -40,7 +40,7 @@ namespace Mirror.Examples.Chat
             int explosionsCount = explosion_distance;
 
             foreach(RaycastHit2D hit in hits){
-                Debug.Log(hit.collider.name);
+                //Debug.Log(hit.collider.name);
 
                 if (hit.collider.CompareTag("Wall") || hit.collider.CompareTag("Block"))
                 {
@@ -49,7 +49,7 @@ namespace Mirror.Examples.Chat
 
                     if(hit.collider.CompareTag("Block") && hit.collider.TryGetComponent<Block>(out Block block))
                     {
-                        block.DestroyBlock();
+                        block.DestroyAnimation();
                     }
                     break;
                 }
