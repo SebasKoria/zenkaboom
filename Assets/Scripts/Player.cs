@@ -5,27 +5,30 @@ namespace Mirror.Examples.Chat
     public class Player : NetworkBehaviour
     {
         [SyncVar] public string playerName;
+        [SyncVar] public bool isAlive = true;
 
         [SerializeField] private GameObject bomb_go;
         [SerializeField] private LayerMask walls_layer;
         [SerializeField] private float speed = 1f;
-        [SerializeField] private float timeScale = 1f;
 
         private Rigidbody2D rb;
+        private SpriteRenderer spriteRenderer;
         private NetworkAnimator nAnimator;
         private Vector2 previousVelocity;
         private float horizontal_input = 0;
         private float vertical_input = 0;
+        private bool canPlaceBombs = false;
         private string lastTriggerSent = "idle";
 
         void Start(){
-            Time.timeScale = timeScale;
+            if (isLocalPlayer)
+            {
+                previousVelocity = Vector2.zero;
 
-            transform.position = new Vector2(1f, 1f);
-            previousVelocity = Vector2.zero;
-
-            rb = GetComponent<Rigidbody2D>();
-            nAnimator = GetComponent<NetworkAnimator>();
+                rb = GetComponent<Rigidbody2D>();
+                nAnimator = GetComponent<NetworkAnimator>();
+                spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+            }
         }
 
         public override void OnStartServer()
@@ -48,24 +51,29 @@ namespace Mirror.Examples.Chat
             if (isLocalPlayer)
             {
                 NetworkManager.singleton.StopHost();
+
+                LoginUI.instance.gameObject.SetActive(true);
+                LoginUI.instance.usernameInput.text = playerName;
+                LoginUI.instance.usernameInput.ActivateInputField();
             }
         }
 
         [ClientRpc]
-        public void BecomeAdmin()
+        public void StartMatch()
         {
             if (isLocalPlayer)
             {
-                Debug.Log("You are an admin");
+                Debug.Log("Match started");
+                canPlaceBombs = true;
             }
         }
 
         [ClientRpc]
-        public void LeaveAdminRole()
+        public void TeleportTo(Vector2 position)
         {
             if (isLocalPlayer)
             {
-                Debug.Log("You are no longer an admin");
+                transform.position = position;
             }
         }
 
@@ -78,10 +86,13 @@ namespace Mirror.Examples.Chat
         {
             if (!isLocalPlayer) return;
 
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            if (canPlaceBombs)
             {
-                //Debug.Log("Sent SPAWN BOMB");
-                SpawnBomb(transform.position);
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+                {
+                    //Debug.Log("Sent SPAWN BOMB");
+                    SpawnBomb(transform.position);
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -93,6 +104,7 @@ namespace Mirror.Examples.Chat
         // me tardé un pinche día haciendo esto
         void FixedUpdate(){
             if(!isLocalPlayer) return;
+            if (!isAlive) return;
 
             horizontal_input = Input.GetAxisRaw("Horizontal");
             vertical_input = Input.GetAxisRaw("Vertical");
@@ -228,7 +240,14 @@ namespace Mirror.Examples.Chat
         [ClientRpc]
         public void RPC_Die()
         {
-            if(isLocalPlayer) Debug.Log("You Died!");
+            if (isLocalPlayer)
+            {
+                Debug.Log("You Died!");
+                isAlive = false;
+                spriteRenderer.color = Color.black;
+
+                GameManager.instance.PlayerDie(this);
+            }
         }
     }
 }
